@@ -92,7 +92,7 @@ Run once (as `ACCOUNTADMIN` / `EXAM_ETL_ROLE`) to provision:
   (points at `s3://datawarehouse-etl-softuni/regular-exam/transformed-data/`)
 - **Cleansed tables:** `SALES_CLEAN`, `PRODUCT_CLEAN`, `SALES_SUMMARY` — loaded by the
   Airflow DAG's `load_to_snowflake` task via `COPY INTO`
-- **Star schema (`STAR` schema):**
+- **Star schema (`BUSINESS_LAYER` schema):**
   - `DIM_DATE` — one row per calendar date derived from `SALES_CLEAN`
   - `DIM_PRODUCT` — product attributes from `PRODUCT_CLEAN`
   - `FACT_SALES` — sales facts (qty, price, discount, revenue) keyed by
