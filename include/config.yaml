@@ -1,0 +1,23 @@
+aws:
+  conn_id: aws_conn_id
+  bucket_name: datawarehouse-etl-softuni
+
+  folders:
+    raw_data: regular-exam/raw-data/
+    transformed_data: regular-exam/transformed-data/
+
+snowflake:
+  conn_id: my_snowflake_conn
+  database: EXAM_EX
+  stage: PROCESSED_S3_STAGE
+  file_format: PARQUET_FILE_FORMAT
+  targets:
+    sales:
+      schema: cleansed_layer
+      table: sales_clean
+    products:
+      schema: cleansed_layer
+      table: product_clean
+    sales_summary:
+      schema: cleansed_layer
+      table: sales_summary
