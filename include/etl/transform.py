@@ -10,7 +10,7 @@ logging = set_up_logger(__name__)
 
 def headers_to_snake_case(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Standardizing headers to snake caser.
+    Standardizing headers to snake case.
     """
     df = df.copy()
     logging.info(f"Converting headers {', '.join(map(str, df.columns))} to snake_case")

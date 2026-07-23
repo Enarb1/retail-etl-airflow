@@ -55,16 +55,3 @@ def read_data_from_s3(s3_path: str, storage_options: dict) -> pd.DataFrame:
     logging.info(f'Successfully read file from {s3_path}\nRead file with {len(df)} rows and {len(df.columns)} columns')
 
     return df
-
-
-# def load_data_to_s3(df: pd.DataFrame, s3_path: str, storage_options: dict) -> None:
-#     """
-#     Loads data to a S3 path as parquet
-#     """
-#     logging.info(f'Writing data to {s3_path}...')
-#     try:
-#         df.to_parquet(s3_path, storage_options=storage_options, index=False)
-#         logging.info(f'Successfully wrote data to {s3_path}')
-#     except Exception as e:
-#         logging.exception(f'Cannot write to {s3_path}. Error: {e}')
-#         raise

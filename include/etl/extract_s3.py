@@ -27,7 +27,6 @@ def extract_raw_data_paths_from_s3(bucket: str, folder: str, aws_conn_id: str) -
     for key in keys:
         # key ex.: regular-exam/raw-data/sales_data.csv
 
-        # Key to PurePosixPath in order do get the file extension and dataset name
         path = PurePosixPath(key)
         extension = path.suffix.lower()
 
